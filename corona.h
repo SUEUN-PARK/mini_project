@@ -27,7 +27,7 @@ int createCorona(Corona* c);
 // 코로나 확진자 명단 조회(단일 데이터)
 void readCorona(Corona c);
 
-// 코로나 확진자 명단 조회(다중 데이터) (readCorona 화룡)
+// 코로나 확진자 명단 조회(다중 데이터) (readCorona 활용)
 void listCorona(Corona* c[], int count);
 
 // 수정, 삭제 시에 리스트를 보여주고 명단을 선택해서 return 하는 함수
