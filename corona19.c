@@ -48,7 +48,7 @@ int main(void){
 			c[curcount] = (Corona *)malloc(sizeof(Corona));
 			// return 1을 하여 count갑슬 올리고자함
 			// createCorona의 반환형을 void -> int 로 변경 
-			count += createCorona(cp[curcount++]);
+			count += createCorona(c[curcount++]);
                 }
 
                 else if(menu == 3){
