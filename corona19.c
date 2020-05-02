@@ -46,7 +46,7 @@ int main(void){
 
                 else if(menu == 2){
 			c[curcount] = (Corona *)malloc(sizeof(Corona));
-			// return 1을 하여 count갑슬 올리고자함
+			// return 1을 하여 count 값을 올리고자함
 			// createCorona의 반환형을 void -> int 로 변경 
 			count += createCorona(c[curcount++]);
                 }
