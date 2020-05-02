@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "corona.h" // 구조체와 함수가 포함된 헤더파일
 
 int selectMenu(){
 
@@ -21,12 +22,11 @@ int selectMenu(){
 }
 
 int main(void){
-        // 구조체 선언 후 포인터 배열 정의하기
+        Corona *c[100];
+
         int curcount = 0;
         int count = 0;
         int menu;
-
-        // count, curcount 값 할당하기
 
         while(1) {
                 menu = selectMenu();
@@ -41,27 +41,56 @@ int main(void){
                 }
 
                 if(menu == 1){
-
+			listCorona(c, curcount); // 코로나 확진자 명단 조회
                 }
 
                 else if(menu == 2){
-
+			c[curcount] = (Corona *)malloc(sizeof(Corona));
+			// return 1을 하여 count갑슬 올리고자함
+			// createCorona의 반환형을 void -> int 로 변경 
+			count += createCorona(cp[curcount++]);
                 }
 
                 else if(menu == 3){
-
+			int no = selectIndex(c, curcount);
+			if(no == 0){
+				printf("=> 취소됨!\n");
+				continue;
+			}
+			updateCorona(c[no-1]);
                 }
 
                 else if(menu == 4){
 
+			int no = selectIndex(c, curcount);
+			if(no == 0){
+				printf("=> 취소됨!\n");
+				continue;
+			}
+
+			int deleteok;
+			printf("정말로 삭제하시겠습니까? (삭제:1) ");
+			scanf(" %d", &deleteok);
+
+			if(deleteok == 1){
+				// deleteCorona() 함수 구현
+				if(c[no-1]) free(c[no-1]);
+				c[no-1] = NULL;
+				count--;
+				printf("=> 삭제됨!\n");
+			}
+			else{
+				printf("=> 취소됨!\n");
+				continue;
+			}
                 }
 
                 else if(menu == 5){
-
+			saveData(c, curcount);
                 }
 
                 else if(menu == 6){
-
+			
                 }
         }
 

@@ -22,7 +22,7 @@ typedef struct _corona
 #define CORONA "corona19.txt"       //데이터 저장에 사용할 파일 이름
 
 // 코로나 확진자 명단 한 칸 추가
-void createCorona(Corona* c);
+int createCorona(Corona* c);
 
 // 코로나 확진자 명단 조회(단일 데이터)
 void readCorona(Corona c);
