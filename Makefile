@@ -13,4 +13,4 @@ confirmer.o: confirmer.c corona.h
 	gcc -c confirmer.c -o confirmer.o
 
 clean:
-	rm *.o corona
+	rm *.o corona corona_debug
