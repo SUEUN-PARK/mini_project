@@ -39,31 +39,18 @@ int main(void){
 			no = selectIndex(c, curcount);
 			if(no == 0){
 				printf("=> 취소됨!\n");
-				continue;
 			}
-			updateCorona(c[no-1]);
+                        else
+			        updateCorona(c[no-1]);
                 }
 
                 else if(menu == 4){
 			no = selectIndex(c, curcount);
 			if(no == 0){
 				printf("=> 취소됨!\n");
-				continue;
 			}
-					
-			printf("정말로 삭제하시겠습니까? (삭제:1) ");
-			scanf(" %d", &deleteok);
-			
-			if(deleteok == 1){
-				if(c[no-1]) free(c[no-1]);
-				c[no-1] = NULL;
-				count--;
-				printf("=> 삭제됨!\n");
-			}
-			else{
-				printf("=> 취소됨!\n");
-				continue;
-			}
+			else
+                                count -= deleteCorona(c[no-1]);
                 }
 
                 else if(menu == 5){

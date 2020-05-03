@@ -64,7 +64,23 @@ void updateCorona(Corona* c)
 
 // 코로나 확진자 명단 삭제 (selectIndex 활용)
 // 삭제 방식은 해당 memory를 free() 후 NULL
-void deleteCorona(Corona* c){ }
+int deleteCorona(Corona* c){ 
+    int deleteok;
+
+    printf("정말로 삭제하시겠습니까? (삭제:1) ");
+	scanf(" %d", &deleteok);
+
+    if(deleteok == 1){
+        free(c);
+        c = NULL;
+        printf("=> 삭제됨!\n");
+	}
+	else{
+        printf("=> 취소됨!\n");
+	}
+    
+    return 1;
+}
 
 // 명단 저장
 void saveData(Corona* c[], int count){ }
