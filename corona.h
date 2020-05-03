@@ -1,6 +1,7 @@
 //CRUD mini team project
 //주제: 코로나 19_국내 현황
 #include <stdio.h>
+#include <stdlib.h>
 
 #ifdef DEBUG
     printf("Debuging test\n");
