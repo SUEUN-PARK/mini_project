@@ -2,32 +2,17 @@
 #include <stdlib.h>
 #include "corona.h" // 구조체와 함수가 포함된 헤더파일
 
-int selectMenu(){
-
-        int menu;
-
-        printf("\n*** Corona-19 ***\n");
-        printf("1. 확진자조회\n");
-        printf("2. 확진자추가\n");
-        printf("3. 확진자수정\n");
-        printf("4. 확진자삭제\n");
-        printf("5. 파일저장\n");
-        printf("6. 확진자검색\n");
-        printf("0. 종료\n\n");
-
-        printf("=> 원하는 기능은? ");
-
-        scanf("%d", &menu);
-
-        return menu;
-}
-
 int main(void){
         Corona *c[100];
 
         int curcount = 0;
         int count = 0;
         int menu;
+        int no;		
+	int deleteok;
+
+        count = loadData(c);
+        curcount = count;
 
         while(1) {
                 menu = selectMenu();
@@ -53,7 +38,7 @@ int main(void){
                 }
 
                 else if(menu == 3){
-			int no = selectIndex(c, curcount);
+			no = selectIndex(c, curcount);
 			if(no == 0){
 				printf("=> 취소됨!\n");
 				continue;
@@ -62,14 +47,12 @@ int main(void){
                 }
 
                 else if(menu == 4){
-
-			int no = selectIndex(c, curcount);
+			no = selectIndex(c, curcount);
 			if(no == 0){
 				printf("=> 취소됨!\n");
 				continue;
 			}
-							
-			int deleteok;
+					
 			printf("정말로 삭제하시겠습니까? (삭제:1) ");
 			scanf(" %d", &deleteok);
 			
