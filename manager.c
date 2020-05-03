@@ -38,4 +38,13 @@ void listCorona(Corona* c[], int count){
 }
 
 // 수정, 삭제 시에 리스트를 보여주고 명단을 선택해서 return 하는 함수
-int selectIndex(Corona* c[], int count){ }
+int selectIndex(Corona* c[], int count)
+{
+        int no;
+
+        listCorona(c, count);
+        printf("\n=> 작업할 리스트 번호 선택 : ");
+        scanf("%d", &no);
+
+        return no;
+}

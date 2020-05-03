@@ -11,8 +11,8 @@ int main(void){
         int no;		
 	int deleteok;
 
-        count = loadData(c);
-        curcount = count;
+        //count = loadData(c);
+        //curcount = count;
 
         while(1) {
                 menu = selectMenu();
@@ -31,9 +31,7 @@ int main(void){
                 }
 
                 else if(menu == 2){
-			c[curcount] = (Corona *)malloc(sizeof(Corona));
-			// return 1을 하여 count 값을 올리고자함
-			// createCorona의 반환형을 void -> int 로 변경 
+			c[curcount] = (Corona *)malloc(sizeof(Corona)); 
 			count += createCorona(c[curcount++]);
                 }
 
