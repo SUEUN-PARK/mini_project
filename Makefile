@@ -1,5 +1,10 @@
-corona: corona19.c manager.o confirmer.o
-	gcc -o corona corona19.c manager.o confirmer.o
+OBJECTS = corona19.c manager.o confirmer.o
+
+corona: $(OBJECTS)
+	gcc -o $@ $^
+
+corona_debug : $(OBJECTS)
+	gcc -DDEBUG -o $@ $^
 
 manager.o: manager.c corona.h
 	gcc -c manager.c -o manager.o
