@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "corona.h" // 구조체와 함수가 포함된 헤더파일
 
 int selectMenu(){
@@ -67,13 +68,12 @@ int main(void){
 				printf("=> 취소됨!\n");
 				continue;
 			}
-
+							
 			int deleteok;
 			printf("정말로 삭제하시겠습니까? (삭제:1) ");
 			scanf(" %d", &deleteok);
-
+			
 			if(deleteok == 1){
-				// deleteCorona() 함수 구현
 				if(c[no-1]) free(c[no-1]);
 				c[no-1] = NULL;
 				count--;
