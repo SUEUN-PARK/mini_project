@@ -36,7 +36,31 @@ void readCorona(Corona c){
 }
 
 // 코로나 확진자 명단 수정 (selectIndex 활용)
-void updateCorona(Corona* c){ }
+void updateCorona(Corona* c)
+{
+     printf("이름 : ");
+    scanf(" %s", c->name);
+
+    printf("나이 : ");
+    scanf(" %d", &c->age);
+
+    printf("성별[M/F] : ");
+    scanf(" %c", &c->gender);
+
+    printf("거주지 : ");
+    scanf(" %s", c->residence);
+
+    printf("확진날짜 : ");
+    scanf(" %s", c->date);
+
+    printf("격리시설 : ");
+    scanf(" %[^\n]s", c->hospital);
+
+    printf("국내감염[Y/N] : ");
+    scanf(" %c", &c->domestic);
+
+    printf("\n=> 수정 성공!\n");
+}
 
 // 코로나 확진자 명단 삭제 (selectIndex 활용)
 // 삭제 방식은 해당 memory를 free() 후 NULL
