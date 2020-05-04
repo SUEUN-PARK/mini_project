@@ -107,7 +107,7 @@ void saveData(Corona* c[], int count){
 
 	for(int i = 0; i < count; i++){
 		if(c[i] != NULL){
-			fprintf(fp, "%s %s %c %2d세 %s %c %s\n", c[i]->residence, c[i]->name, c[i]->gender, c[i]->age, c[i]->date, c[i]->domestic, c[i]->hospital);
+			fprintf(fp, "%s %s %c %d %s %c %s\n", c[i]->residence, c[i]->name, c[i]->gender, c[i]->age, c[i]->date, c[i]->domestic, c[i]->hospital);
         	}
     	}
 
@@ -129,8 +129,8 @@ int loadData(Corona* c[])
 
     while(!feof(fp))
     {
-        fscanf(fp, "%s %s %c %2d세 %s %c %[^\n]s\n", c[i]->residence, c[i]->name, &c[i]->gender, 
-                                                        &c[i]->age, c[i]->date, &c[i]->domestic, c[i]->hospital);
+	c[i]=(Corona*)malloc(sizeof(Corona));
+        fscanf(fp, "%s %s %c %d %s %c %[^\n]s", c[i]->residence, c[i]->name, &(c[i]->gender),&(c[i]->age), c[i]->date, &(c[i]->domestic), c[i]->hospital);
         i++;
     }
 
