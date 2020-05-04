@@ -11,8 +11,8 @@ int main(void){
         int no;		
 	int deleteok;
 
-        //count = loadData(c);
-        //curcount = count;
+        count = loadData(c);
+        curcount = count;
 
         while(1) {
                 menu = selectMenu();

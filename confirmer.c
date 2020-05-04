@@ -10,8 +10,13 @@ int createCorona(Corona* c)
     printf("나이 : ");
     scanf(" %d", &c->age);
 
-    printf("성별[M/F] : ");
-    scanf(" %c", &c->gender);
+    do{
+        printf("성별[M/F] : ");
+        scanf(" %c", &c->gender);
+
+        if(c->gender != 'M' || c->gender != 'F')
+            printf("Error : 잘못된 입력입니다!\n");
+    }while(c->gender != 'M' || c->gender != 'F');
 
     printf("거주지 : ");
     scanf(" %s", c->residence);
@@ -22,8 +27,13 @@ int createCorona(Corona* c)
     printf("격리시설 : ");
     scanf(" %[^\n]s", c->hospital);
 
-    printf("국내감염[Y/N] : ");
-    scanf(" %c", &c->domestic);
+    do{
+        printf("국내감염[Y/N] : ");
+        scanf(" %c", &c->domestic);
+
+        if(c->domestic != 'Y' || c->domestic != 'N')
+            printf("Error : 잘못된 입력입니다!\n");
+    }while(c->domestic != 'Y' || c->domestic != 'N');
 
     printf("\n=> 추가 성공!\n");
 
@@ -43,8 +53,13 @@ void updateCorona(Corona* c){
     printf("나이 : ");
     scanf(" %d", &c->age);
 
-    printf("성별[M/F] : ");
-    scanf(" %c", &c->gender);
+    do{
+        printf("성별[M/F] : ");
+        scanf(" %c", &c->gender);
+
+        if(c->gender != 'M' || c->gender != 'F')
+            printf("Error : 잘못된 입력입니다!\n");
+    }while(c->gender != 'M' || c->gender != 'F');
 
     printf("거주지 : ");
     scanf(" %s", c->residence);
@@ -55,8 +70,13 @@ void updateCorona(Corona* c){
     printf("격리시설 : ");
     scanf(" %[^\n]s", c->hospital);
 
-    printf("국내감염[Y/N] : ");
-    scanf(" %c", &c->domestic);
+    do{
+        printf("국내감염[Y/N] : ");
+        scanf(" %c", &c->domestic);
+
+        if(c->domestic != 'Y' || c->domestic != 'N')
+            printf("Error : 잘못된 입력입니다!\n");
+    }while(c->domestic != 'Y' || c->domestic != 'N');
 
     printf("\n=> 수정 성공!\n");
 }
@@ -83,11 +103,11 @@ int deleteCorona(Corona* c){
 
 // 명단 저장
 void saveData(Corona* c[], int count){
-	FILE *fp = fopen("corona19.txt", "wt");
+	FILE *fp = fopen(CORONA, "wt");
 
 	for(int i = 0; i < count; i++){
 		if(c[i] != NULL){
-			fprintf(fp, "%s %s %c %2d세 %s %s %c\n", c[i]->residence, c[i]->name, c[i]->gender, c[i]->age, c[i]->date, c[i]->hospital, c[i]->domestic);
+			fprintf(fp, "%s %s %c %2d세 %s %c %s\n", c[i]->residence, c[i]->name, c[i]->gender, c[i]->age, c[i]->date, c[i]->domestic, c[i]->hospital);
         	}
     	}
 
@@ -97,4 +117,7 @@ void saveData(Corona* c[], int count){
 }
 
 // 명단 로딩
-int loadData(Corona* c[]){ }
+int loadData(Corona* c[])
+{ 
+    
+}

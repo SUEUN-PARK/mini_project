@@ -48,3 +48,4 @@ int selectIndex(Corona* c[], int count)
 
         return no;
 }
+
