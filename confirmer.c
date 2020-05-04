@@ -14,9 +14,9 @@ int createCorona(Corona* c)
         printf("성별[M/F] : ");
         scanf(" %c", &c->gender);
 
-        if(c->gender != 'M' || c->gender != 'F')
+        if(!(c->gender == 'M' || c->gender == 'F'))
             printf("Error : 잘못된 입력입니다!\n");
-    }while(c->gender != 'M' || c->gender != 'F');
+    }while(!(c->gender == 'M' || c->gender == 'F'));
 
     printf("거주지 : ");
     scanf(" %s", c->residence);
@@ -31,9 +31,9 @@ int createCorona(Corona* c)
         printf("국내감염[Y/N] : ");
         scanf(" %c", &c->domestic);
 
-        if(c->domestic != 'Y' || c->domestic != 'N')
+        if(!(c->gender == 'Y' || c->gender == 'N'))
             printf("Error : 잘못된 입력입니다!\n");
-    }while(c->domestic != 'Y' || c->domestic != 'N');
+    }while(!(c->gender == 'Y' || c->gender == 'N'));
 
     printf("\n=> 추가 성공!\n");
 
