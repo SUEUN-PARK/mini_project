@@ -36,9 +36,8 @@ void readCorona(Corona c){
 }
 
 // 코로나 확진자 명단 수정 (selectIndex 활용)
-void updateCorona(Corona* c)
-{
-     printf("이름 : ");
+void updateCorona(Corona* c){
+    printf("이름 : ");
     scanf(" %s", c->name);
 
     printf("나이 : ");
@@ -83,7 +82,19 @@ int deleteCorona(Corona* c){
 }
 
 // 명단 저장
-void saveData(Corona* c[], int count){ }
+void saveData(Corona* c[], int count){
+	FILE *fp = fopen("corona19.txt", "wt");
+
+	for(int i = 0; i < count; i++){
+		if(c[i] != NULL){
+			fprintf(fp, "%s %s %c %2d세 %s %s %c\n", c[i]->residence, c[i]->name, c[i]->gender, c[i]->age, c[i]->date, c[i]->hospital, c[i]->domestic);
+        	}
+    	}
+
+    	fclose(fp);
+
+	printf("=> 저장됨!\n");	
+}
 
 // 명단 로딩
 int loadData(Corona* c[]){ }
