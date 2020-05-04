@@ -119,5 +119,23 @@ void saveData(Corona* c[], int count){
 // 명단 로딩
 int loadData(Corona* c[])
 { 
-    
+    int i = 0;
+    FILE* fp = fopen(CORONA, "rt");
+    if(fp == NULL)
+    {
+        printf("저장된 데이터 없음!\n");
+        return 0;
+    }
+
+    while(!feof(fp))
+    {
+        fscanf(fp, "%s %s %c %2d세 %s %c %[^\n]s\n", c[i]->residence, c[i]->name, &c[i]->gender, 
+                                                        &c[i]->age, c[i]->date, &c[i]->domestic, c[i]->hospital);
+        i++;
+    }
+
+    fclose(fp);
+    printf("로딩 성공!\n");    
+
+    return --i;
 }
