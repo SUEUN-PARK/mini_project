@@ -57,9 +57,9 @@ int selectUpdate()
         printf("\n***수정 선택***\n");
         printf("0. 전체수정\n");
         printf("1. 이름\n");
-        printf("2. 성별\n");
+        printf("2. 나이\n");
         printf("3. 성별\n");
-        printf("4. 나이\n");
+        printf("4. 지역\n");
         printf("5. 확진날짜\n");
         printf("6. 격리시설\n");
         printf("7. 국내감염여부\n");
