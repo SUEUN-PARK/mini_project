@@ -37,6 +37,9 @@ void listCorona(Corona* c[], int count);
 // 수정, 삭제 시에 리스트를 보여주고 명단을 선택해서 return 하는 함수
 int selectIndex(Corona* c[], int count);
 
+// 명단을 수정하기 전, 수정할 index를 반환하는 함수
+int selectUpdate();
+
 // 코로나 확진자 명단 수정 (selectIndex 활용)
 void updateCorona(Corona* c);
 
