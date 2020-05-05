@@ -55,7 +55,7 @@ int selectUpdate(Corona* c)
         int choice;
 
         printf("\n***수정 선택***\n");
-        printf("0. 전체수정\n")''
+        printf("0. 전체수정\n");
         printf("1. 이름\n");
         printf("2. 성별\n");
         printf("3. 성별\n");
