@@ -49,3 +49,25 @@ int selectIndex(Corona* c[], int count)
         return no;
 }
 
+// 명단을 수정하기 전, 수정할 index를 반환하는 함수
+int selectUpdate(Corona* c)
+{
+        int choice;
+
+        printf("\n***수정 선택***\n");
+        printf("0. 전체수정\n")''
+        printf("1. 이름\n");
+        printf("2. 성별\n");
+        printf("3. 성별\n");
+        printf("4. 나이\n");
+        printf("5. 확진날짜\n");
+        printf("6. 격리시설\n");
+        printf("7. 국내감염여부\n");
+        printf("-1. 수정취소\n\n");
+
+        printf("=> 수정할 항목은? ");
+        scanf("%d", &choice);
+
+        return choice;
+}
+
