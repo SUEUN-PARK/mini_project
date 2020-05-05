@@ -47,7 +47,11 @@ void readCorona(Corona c){
 
 // 코로나 확진자 명단 수정 (selectIndex 활용)
 void updateCorona(Corona* c){
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 0c7371c071bf4614d5858fc6e3b104338c4a84e8
     int choice;
     choice = selectUpdate();
 
@@ -113,6 +117,10 @@ void updateCorona(Corona* c){
             printf("성별[M/F] : ");
             scanf(" %c", &c->gender);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0c7371c071bf4614d5858fc6e3b104338c4a84e8
             if(!(c->gender == 'M' || c->gender == 'F'))
                 printf("Error : 잘못된 입력입니다!\n");
         }while(!(c->gender == 'M' || c->gender == 'F'));
