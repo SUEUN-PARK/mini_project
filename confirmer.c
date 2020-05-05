@@ -47,36 +47,94 @@ void readCorona(Corona c){
 
 // 코로나 확진자 명단 수정 (selectIndex 활용)
 void updateCorona(Corona* c){
-    printf("이름: ");
-    scanf(" %s", c->name);
 
-    printf("나이: ");
-    scanf(" %d", &c->age);
+    int choice;
+    choice = selectUpdate();
 
-    do{
-        printf("성별[M/F]: ");
-        scanf(" %c", &c->gender);
+    if(choice != 0)
+    {
+        switch(choice)
+        {
+        case 1: 
+            printf("이름 : ");
+            scanf(" %s", c->name);
+            break;
+        case 2:
+            printf("나이 : ");
+            scanf(" %d", &c->age);
+            break;
+        case 3:
+            do{
+                printf("성별[M/F] : ");
+                scanf(" %c", &c->gender);
 
-        if(!(c->gender == 'M' || c->gender == 'F'))
-            printf("Error : 잘못된 입력입니다!\n");
-    }while(!(c->gender == 'M' || c->gender == 'F'));
+                if(!(c->gender == 'M' || c->gender == 'F'))
+                    printf("Error : 잘못된 입력입니다!\n");
+            }while(!(c->gender == 'M' || c->gender == 'F'));
+            break;
+        case 4:
+            printf("거주지 : ");
+            scanf(" %s", c->residence);
+            break;
+        case 5:
+            printf("확진날짜 : ");
+            scanf(" %s", c->date);
+            break;
+        case 6:
+            printf("격리시설 : ");
+            scanf(" %[^\n]s", c->hospital);
+            break;
+        case 7:
+            do{
+                printf("국내감염[Y/N] : ");
+                scanf(" %c", &c->domestic);
 
-    printf("거주지: ");
-    scanf(" %s", c->residence);
+                if(!(c->domestic == 'Y' || c->domestic == 'N'))
+                    printf("Error : 잘못된 입력입니다!\n");
+            }while(!(c->domestic == 'Y' || c->domestic == 'N'));
+            break;
+        case -1:
+            printf("수정 취소!\n");
+            return;
+        default:
+            printf("잘못된 입력입니다!\n");
+            return;
+        }
+    }
+    else
+    {
+        printf("이름 : ");
+        scanf(" %s", c->name);
 
-    printf("확진날짜: ");
-    scanf(" %s", c->date);
+        printf("나이 : ");
+        scanf(" %d", &c->age);
 
-    printf("격리시설: ");
-    scanf(" %[^\n]s", c->hospital);
+        do{
+            printf("성별[M/F] : ");
+            scanf(" %c", &c->gender);
 
-    do{
-        printf("국내감염[Y/N]: ");
-        scanf(" %c", &c->domestic);
 
-        if(!(c->domestic == 'Y' || c->domestic == 'N'))
-            printf("Error : 잘못된 입력입니다!\n");
-    }while(!(c->domestic == 'Y' || c->domestic == 'N'));
+            if(!(c->gender == 'M' || c->gender == 'F'))
+                printf("Error : 잘못된 입력입니다!\n");
+        }while(!(c->gender == 'M' || c->gender == 'F'));
+
+        printf("거주지 : ");
+        scanf(" %s", c->residence);
+
+        printf("확진날짜 : ");
+        scanf(" %s", c->date);
+
+        printf("격리시설 : ");
+        scanf(" %[^\n]s", c->hospital);
+
+        do{
+            printf("국내감염[Y/N] : ");
+            scanf(" %c", &c->domestic);
+
+            if(!(c->domestic == 'Y' || c->domestic == 'N'))
+                printf("Error : 잘못된 입력입니다!\n");
+        }while(!(c->domestic == 'Y' || c->domestic == 'N'));
+    }
 
     printf("\n=> 수정 성공!\n");
 }
