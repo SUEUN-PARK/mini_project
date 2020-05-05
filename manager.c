@@ -50,7 +50,7 @@ int selectIndex(Corona* c[], int count)
 }
 
 // 명단을 수정하기 전, 수정할 index를 반환하는 함수
-int selectUpdate(Corona* c)
+int selectUpdate()
 {
         int choice;
 
