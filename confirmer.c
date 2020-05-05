@@ -4,31 +4,31 @@
 // 코로나 확진자 명단 한 칸 추가
 int createCorona(Corona* c)
 {
-    printf("이름 : ");
+    printf("이름: ");
     scanf(" %s", c->name);
 
-    printf("나이 : ");
+    printf("나이: ");
     scanf(" %d", &c->age);
 
     do{
-        printf("성별[M/F] : ");
+        printf("성별[M/F]: ");
         scanf(" %c", &c->gender);
 
         if(!(c->gender == 'M' || c->gender == 'F'))
             printf("Error : 잘못된 입력입니다!\n");
     }while(!(c->gender == 'M' || c->gender == 'F'));
 
-    printf("거주지 : ");
+    printf("거주지: ");
     scanf(" %s", c->residence);
 
-    printf("확진날짜 : ");
+    printf("확진날짜: ");
     scanf(" %s", c->date);
 
-    printf("격리시설 : ");
+    printf("격리시설: ");
     scanf(" %[^\n]s", c->hospital);
 
     do{
-        printf("국내감염[Y/N] : ");
+        printf("국내감염[Y/N]: ");
         scanf(" %c", &c->domestic);
 
         if(!(c->domestic == 'Y' || c->domestic == 'N'))
@@ -42,11 +42,12 @@ int createCorona(Corona* c)
 
 // 코로나 확진자 명단 조회(단일 데이터)
 void readCorona(Corona c){
-	printf("%s %s %c %2d세 %s %s %c\n", c.residence, c.name, c.gender, c.age, c.date, c.hospital, c.domestic);
+	printf("%s %s %c   %2d세 %s %s %c\n", c.residence, c.name, c.gender, c.age, c.date, c.hospital, c.domestic);
 }
 
 // 코로나 확진자 명단 수정 (selectIndex 활용)
 void updateCorona(Corona* c){
+
     int choice;
     choice = selectUpdate();
 
@@ -112,6 +113,7 @@ void updateCorona(Corona* c){
             printf("성별[M/F] : ");
             scanf(" %c", &c->gender);
 
+
             if(!(c->gender == 'M' || c->gender == 'F'))
                 printf("Error : 잘못된 입력입니다!\n");
         }while(!(c->gender == 'M' || c->gender == 'F'));
@@ -139,20 +141,20 @@ void updateCorona(Corona* c){
 
 // 코로나 확진자 명단 삭제 (selectIndex 활용)
 // 삭제 방식은 해당 memory를 free() 후 NULL
-int deleteCorona(Corona* c){ 
+int deleteCorona(Corona* c[], int no){ 
     int deleteok;
 
     printf("정말로 삭제하시겠습니까? (삭제:1) ");
 	scanf(" %d", &deleteok);
 
     if(deleteok == 1){
-        free(c);
-        c = NULL;
+        free(c[no]);
+        c[no] = NULL;
         printf("=> 삭제됨!\n");
-	}
-	else{
+    }
+    else{
         printf("=> 취소됨!\n");
-	}
+    }
     
     return 1;
 }

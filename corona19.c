@@ -50,7 +50,7 @@ int main(void){
 				printf("=> 취소됨!\n");
 			}
 			else
-                                count -= deleteCorona(c[no-1]);
+                                count -= deleteCorona(c, no-1);
                 }
 
                 else if(menu == 5){
