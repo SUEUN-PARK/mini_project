@@ -18,7 +18,7 @@ int createCorona(Corona* c)
             printf("Error : 잘못된 입력입니다!\n");
     }while(!(c->gender == 'M' || c->gender == 'F'));
 
-    printf("거주지: ");
+    printf("지역: ");
     scanf(" %s", c->residence);
 
     printf("확진날짜: ");
@@ -73,7 +73,7 @@ void updateCorona(Corona* c){
             }while(!(c->gender == 'M' || c->gender == 'F'));
             break;
         case 4:
-            printf("거주지 : ");
+            printf("지역: ");
             scanf(" %s", c->residence);
             break;
         case 5:
@@ -112,7 +112,6 @@ void updateCorona(Corona* c){
         do{
             printf("성별[M/F] : ");
             scanf(" %c", &c->gender);
-
 
             if(!(c->gender == 'M' || c->gender == 'F'))
                 printf("Error : 잘못된 입력입니다!\n");
