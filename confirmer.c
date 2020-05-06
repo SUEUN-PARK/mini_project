@@ -95,10 +95,10 @@ int updateCorona(Corona* c){
             break;
         case 0:
             printf("수정 취소!\n");
-            return;
+            return choice;
         default:
             printf("잘못된 입력입니다!\n");
-            return;
+            return choice;
         }
     }
     else
@@ -136,6 +136,8 @@ int updateCorona(Corona* c){
     }
 
     printf("\n=> 수정 성공!\n");
+
+    readCorona(*c);
 
     return choice; 
 }
