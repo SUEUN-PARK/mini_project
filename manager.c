@@ -55,7 +55,6 @@ int selectUpdate()
         int choice;
 
         printf("\n***수정 선택***\n");
-        printf("0. 전체수정\n");
         printf("1. 이름\n");
         printf("2. 나이\n");
         printf("3. 성별\n");
@@ -63,7 +62,8 @@ int selectUpdate()
         printf("5. 확진날짜\n");
         printf("6. 격리시설\n");
         printf("7. 국내감염여부\n");
-        printf("-1. 수정취소\n\n");
+        printf("8. 전체수정\n");
+	printf("0. 수정취소\n\n");
 
         printf("=> 수정할 항목은? ");
         scanf("%d", &choice);

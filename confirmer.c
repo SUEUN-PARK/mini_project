@@ -46,12 +46,12 @@ void readCorona(Corona c){
 }
 
 // 코로나 확진자 명단 수정 (selectIndex 활용)
-void updateCorona(Corona* c){
+int updateCorona(Corona* c){
 
     int choice;
     choice = selectUpdate();
 
-    if(choice != 0)
+    if(choice != 8)
     {
         switch(choice)
         {
@@ -93,12 +93,12 @@ void updateCorona(Corona* c){
                     printf("Error : 잘못된 입력입니다!\n");
             }while(!(c->domestic == 'Y' || c->domestic == 'N'));
             break;
-        case -1:
+        case 0:
             printf("수정 취소!\n");
-            return;
+            return choice;
         default:
             printf("잘못된 입력입니다!\n");
-            return;
+            return choice;
         }
     }
     else
@@ -136,6 +136,10 @@ void updateCorona(Corona* c){
     }
 
     printf("\n=> 수정 성공!\n");
+
+    readCorona(*c);
+
+    return choice; 
 }
 
 // 코로나 확진자 명단 삭제 (selectIndex 활용)

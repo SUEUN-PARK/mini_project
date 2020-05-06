@@ -36,13 +36,23 @@ int main(void){
                 }
 
                 else if(menu == 3){
+			int more;
+			int choice = 0;
 			no = selectIndex(c, curcount);
 			if(no == 0){
 				printf("=> 취소됨!\n");
 			}
-                        else
-			        updateCorona(c[no-1]);
-                }
+                        else{
+			        do{
+					choice = updateCorona(c[no-1]);
+
+					if(choice == 0) break; 
+					printf("\n%d번 내역을 추가수정하시겠습니까?\n수정(1) | 종료(0): ", no);
+					scanf(" %d", &more);
+				}while(more == 1);
+				
+                	}
+		}
 
                 else if(menu == 4){
 			no = selectIndex(c, curcount);
