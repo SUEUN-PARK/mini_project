@@ -161,6 +161,9 @@ int deleteCorona(Corona* c[], int no){
 // 명단 저장
 void saveData(Corona* c[], int count){
 	FILE *fp = fopen(CORONA, "wt");
+	
+	fprintf(fp, "지역 이름 성별 나이 확진일 감염경로(국내:Y) 격리시설\n");
+	fprintf(fp, "====================================================\n");
 
 	for(int i = 0; i < count; i++){
 		if(c[i] != NULL){
