@@ -167,7 +167,7 @@ void saveData(Corona* c[], int count){
 
 	for(int i = 0; i < count; i++){
 		if(c[i] != NULL){
-			fprintf(fp, "%s %s %c %d %s %c %s\n", c[i]->residence, c[i]->name, c[i]->gender, c[i]->age, c[i]->date, c[i]->domestic, c[i]->hospital);
+			fprintf(fp, "%s %s %c %d %s %c \t\t%s\n", c[i]->residence, c[i]->name, c[i]->gender, c[i]->age, c[i]->date, c[i]->domestic, c[i]->hospital);
         	}
     	}
 
