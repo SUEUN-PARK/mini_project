@@ -51,7 +51,7 @@ void updateCorona(Corona* c){
     int choice;
     choice = selectUpdate();
 
-    if(choice != 0)
+    if(choice != 8)
     {
         switch(choice)
         {
@@ -93,7 +93,7 @@ void updateCorona(Corona* c){
                     printf("Error : 잘못된 입력입니다!\n");
             }while(!(c->domestic == 'Y' || c->domestic == 'N'));
             break;
-        case -1:
+        case 0:
             printf("수정 취소!\n");
             return;
         default:
