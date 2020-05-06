@@ -181,12 +181,15 @@ int loadData(Corona* c[])
 { 
     int i = 0;
     FILE* fp = fopen(CORONA, "rt");
+    char dummy[300];
     if(fp == NULL)
     {
         printf("저장된 데이터 없음!\n");
         return 0;
     }
 
+    for(int j=0; j<2; j++)
+	fgets(dummy, sizeof(dummy), fp);
     while(!feof(fp))
     {
 	c[i]=(Corona*)malloc(sizeof(Corona));
