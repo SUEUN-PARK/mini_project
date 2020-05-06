@@ -46,7 +46,7 @@ void readCorona(Corona c){
 }
 
 // 코로나 확진자 명단 수정 (selectIndex 활용)
-void updateCorona(Corona* c){
+int updateCorona(Corona* c){
 
     int choice;
     choice = selectUpdate();
@@ -136,6 +136,8 @@ void updateCorona(Corona* c){
     }
 
     printf("\n=> 수정 성공!\n");
+
+    return choice; 
 }
 
 // 코로나 확진자 명단 삭제 (selectIndex 활용)
