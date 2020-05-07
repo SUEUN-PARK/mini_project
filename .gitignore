@@ -52,5 +52,6 @@ Mkfile.old
 dkms.conf
 
 # Corona project
+*.txt
 corona
 corona_debug
