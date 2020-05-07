@@ -21,7 +21,7 @@ int createCorona(Corona* c)
     printf("지역: ");
     scanf(" %s", c->residence);
 
-    printf("확진날짜: ");
+    printf("확진일: ");
     scanf(" %s", c->date);
 
     printf("격리시설: ");
@@ -77,7 +77,7 @@ int updateCorona(Corona* c){
             scanf(" %s", c->residence);
             break;
         case 5:
-            printf("확진날짜: ");
+            printf("확진일: ");
             scanf(" %s", c->date);
             break;
         case 6:
@@ -120,7 +120,7 @@ int updateCorona(Corona* c){
         printf("거주지: ");
         scanf(" %s", c->residence);
 
-        printf("확진날짜: ");
+        printf("확진일: ");
         scanf(" %s", c->date);
 
         printf("격리시설: ");
@@ -137,9 +137,9 @@ int updateCorona(Corona* c){
 
     printf("\n=> 수정 성공!\n");
 
-    printf("\n============================================\n");
+    printf("\n==============================================\n");
     readCorona(*c);
-    printf("============================================\n");
+    printf("==============================================\n");
 
     return choice; 
 }
