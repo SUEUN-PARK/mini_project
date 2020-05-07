@@ -57,8 +57,8 @@ int main(void){
                                                         printf("Error: 잘못된 입력!");
                                                         continue;
                                                 }
-                                        }
-				}while(more == 1 );
+                                        }while(more == 1);
+				}while(choice != 8);
 				
                 	}
 		}
