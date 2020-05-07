@@ -54,10 +54,11 @@ int main(void){
 
                                                 if(!(more == 1 || more == 0))
                                                 {
-                                                        printf("Error: 잘못된 입력!");
+                                                        printf("Error: 잘못된 입력!\n");
                                                         continue;
                                                 }
-                                        }while(more == 1);
+                                        }while(more !=0 );
+
 				}while(choice != 8);
 				
                 	}
