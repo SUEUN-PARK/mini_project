@@ -59,6 +59,9 @@ int main(void){
                                                 }
                                         }while(more !=0 );
 
+                                        if(more == 0)
+                                                break;
+
 				}while(choice != 8);
 				
                 	}
