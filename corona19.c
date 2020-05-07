@@ -49,6 +49,9 @@ int main(void){
 					if(choice == 0) break; 
 					printf("\n%d번 내역을 추가수정하시겠습니까?\n수정(1) | 종료(0): ", no);
 					scanf(" %d", &more);
+
+                                        if(!(more == 1 || more == 0))
+                                                continue;
 				}while(more == 1);
 				
                 	}
