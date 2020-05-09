@@ -31,13 +31,13 @@ void searchByName(Corona* c[], int count){
 
 	for(int i = 0; i < count; i++){
 
-		if(i == 0) listContents();
-
 		if(c[i] != NULL){
 			if(strstr(c[i]->name, search)){
+				scount++;
+				if(scount == 1) listContents();
+
 				printf("%2d ", i + 1);
 				readCorona(*c[i]);
-				scount++;
 			}
 		}
 	}
@@ -58,13 +58,13 @@ void searchByGender(Corona* c[], int count){
 
 	for(int i = 0; i < count; i++){
 
-		if(i == 0) listContents();
-
 		if(c[i] != NULL){
 			if(c[i]->gender == search){
+				scount++;
+				if(scount == 1) listContents();
+
 				printf("%2d ", i + 1);
 				readCorona(*c[i]);
-				scount++;
 			}
 		}
 	}
