@@ -8,8 +8,9 @@ int selectSearchMenu(){
 
 // 이름으로 검색
 void searchByName(Corona* c[], int count){
+	int scount = 0;
 	char search[50];
-
+	
 	printf("검색할 이름? ");
 	scanf(" %[^\n]s", search);
 
@@ -18,9 +19,13 @@ void searchByName(Corona* c[], int count){
 			if(strstr(c[i]->name, search)){
 				printf("%2d ", i + 1);
 				readCorona(*c[i]);
+				scount++;
 			}
 		}
 	}
+	
+	if(scount == 0)
+		printf("=> 검색된 정보가 없습니다!\n");
 
 	printf("\n");
 }
