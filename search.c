@@ -8,7 +8,21 @@ int selectSearchMenu(){
 
 // 이름으로 검색
 void searchByName(Corona* c[], int count){
+	char search[50];
 
+	printf("검색할 이름? ");
+	scanf(" %[^\n]s", search);
+
+	for(int i = 0; i < count; i++){
+		if(c[i] != NULL){
+			if(strstr(c[i]->name, search)){
+				printf("%2d ", i + 1);
+				readCorona(*c[i]);
+			}
+		}
+	}
+
+	printf("\n");
 }
 
 // 성별로 검색
