@@ -14,6 +14,9 @@ void searchByName(Corona* c[], int count){
 	printf("검색할 이름? ");
 	scanf(" %[^\n]s", search);
 
+	printf("\nNo 지역  이름 성별 나이\t  확진일   격리시설 감염경로(국내:Y)\n");
+	printf("==============================================================\n");
+
 	for(int i = 0; i < count; i++){
 		if(c[i] != NULL){
 			if(strstr(c[i]->name, search)){
