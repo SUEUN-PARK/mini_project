@@ -6,7 +6,7 @@ int selectSearchMenu()
 {
 	int command;
 
-	printf("\n***검색 항목***\n");
+	printf("\n*** 검색 항목***\n");
 	printf("1. 이름으로 검색\n");
 	printf("2. 성별로 검색\n");
 	printf("3. 나이로 검색\n");
@@ -24,14 +24,15 @@ int selectSearchMenu()
 // 이름으로 검색
 void searchByName(Corona* c[], int count){
 	int scount = 0;
-	char search[50];
+	char search[20];
 	
 	printf("검색할 이름? ");
 	scanf(" %[^\n]s", search);
 
-	listContents();
-
 	for(int i = 0; i < count; i++){
+
+		if(i == 0) listContents();
+
 		if(c[i] != NULL){
 			if(strstr(c[i]->name, search)){
 				printf("%2d ", i + 1);
@@ -42,14 +43,36 @@ void searchByName(Corona* c[], int count){
 	}
 	
 	if(scount == 0)
-		printf("=> 검색된 정보가 없습니다!\n");
+		printf("\n=> 검색된 정보가 없습니다!\n");
 
 	printf("\n");
 }
 
 // 성별로 검색
 void searchByGender(Corona* c[], int count){
+	int scount = 0;
+	char search;
 
+	printf("검색할 성별(M/F)? ");
+	scanf(" %c", &search);
+
+	for(int i = 0; i < count; i++){
+
+		if(i == 0) listContents();
+
+		if(c[i] != NULL){
+			if(c[i]->gender == search){
+				printf("%2d ", i + 1);
+				readCorona(*c[i]);
+				scount++;
+			}
+		}
+	}
+
+	if(scount == 0)
+		printf("\n=> 검색된 정보가 없습니다!\n");
+
+	printf("\n");
 }
 
 // 나이로 검색
