@@ -33,7 +33,7 @@ int createCorona(Corona* c);
 void readCorona(Corona c);
 
 // 코로나 확진자 명단의 목차를 보여주는 함수
-void linstContents();
+void listContents();
 
 // 코로나 확진자 명단 조회(다중 데이터) (readCorona 활용)
 void listCorona(Corona* c[], int count);
