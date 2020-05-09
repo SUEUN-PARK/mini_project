@@ -31,6 +31,9 @@ int createCorona(Corona* c);
 // 코로나 확진자 명단 조회(단일 데이터)
 void readCorona(Corona c);
 
+// 코로나 확진자 명단의 목차를 보여주는 함수
+void linstContents();
+
 // 코로나 확진자 명단 조회(다중 데이터) (readCorona 활용)
 void listCorona(Corona* c[], int count);
 
@@ -52,3 +55,31 @@ void saveData(Corona* c[], int count);
 
 // 명단 로딩
 int loadData(Corona* c[]);
+
+// 검색 관련 함수
+// 검색 메뉴 함수를 통해 사용자에게 어떤 방식으로 검색할 것인지 물은 후 return
+// listContents()로 목차를 보여주고 검색한 결과를 보여주는 방식
+
+// 검색 메뉴 함수, 어떤 방식으로 검색할 것인지 사용자에게 물어 return
+int selectSearchMenu();
+
+// 이름으로 검색
+void searchByName(Corona* c[], int count);
+
+// 성별로 검색
+void searchByGender(Corona* c[], int count);
+
+// 나이로 검색
+void searchByAge(Corona* c[], int count);
+
+// 지역으로 검색
+void searchByResidence(Corona* c[], int count);
+
+// 확진일로 검색
+void searchByDate(Corona* c[], int count);
+
+// 격리시설로 검색
+void searchByHospital(Corona* c[], int count);
+
+// 국내감염여부로 검색
+void searchByDomestic(Corona* c[], int count);
