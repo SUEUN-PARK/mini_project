@@ -2,8 +2,22 @@
 #include "corona.h"
 
 // 검색 메뉴 함수, 어떤 방식으로 검색할 것인지 사용자에게 물어 return
-int selectSearchMenu(){
+int selectSearchMenu()
+{
+	int command;
 
+	printf("\n***검색 항목***\n");
+	printf("1. 이름으로 검색\n");
+	printf("2. 성별로 검색\n");
+	printf("3. 나이로 검색\n");
+	printf("4. 지역으로 검색\n");
+	printf("5. 확진일로 검새\n");
+	printf("6. 격리시설로 검색\n");
+	printf("7. 국내감염여부로 검색\n\n");
+	printf("=> 검색할 항목은? ");
+	scanf("%d", &command);
+
+	return command;
 }
 
 // 이름으로 검색
