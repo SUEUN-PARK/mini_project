@@ -81,7 +81,37 @@ int main(void){
                 }
 
                 else if(menu == 6){
-			
+			no = selectSearchMenu();
+                        switch(no)
+                        {
+                        case 0:
+                                printf("검색 취소!\n");
+                                break;
+                        case 1: 
+                                searchByName(c, curcount);
+                                break;
+                        case 2: 
+                                searchByGender(c, curcount);
+                                break;
+                        case 3: 
+                                searchByAge(c, curcount);
+                                break;
+                        case 4: 
+                                searchByResidence(c, curcount);
+                                break;
+                        case 5: 
+                                searchByDate(c, curcount);
+                                break;
+                        case 6: 
+                                searchByHospital(c, curcount);
+                                break;
+                        case 7: 
+                                searchByDomestic(c, curcount);
+                                break;
+                        default:
+                                printf("Error : 잘못된 입력!\n");
+                                break;
+                        }
                 }
         }
 

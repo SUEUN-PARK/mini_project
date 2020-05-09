@@ -13,7 +13,8 @@ int selectSearchMenu()
 	printf("4. 지역으로 검색\n");
 	printf("5. 확진일로 검새\n");
 	printf("6. 격리시설로 검색\n");
-	printf("7. 국내감염여부로 검색\n\n");
+	printf("7. 국내감염여부로 검색\n");
+	printf("0. 검색 취소\n\n");
 	printf("=> 검색할 항목은? ");
 	scanf("%d", &command);
 
