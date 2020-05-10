@@ -27,7 +27,7 @@ void searchByName(Corona* c[], int count){
 	char search[20];
 	
 	printf("검색할 이름? ");
-	scanf(" %[^\n]s", search);
+	scanf(" %s", search);
 
 	for(int i = 0; i < count; i++){
 
