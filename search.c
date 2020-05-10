@@ -9,7 +9,7 @@ int selectSearchMenu()
 	printf("\n*** 검색 항목***\n");
 	printf("1. 이름\n");
 	printf("2. 성별\n");
-	printf("3. 나이\n");
+	printf("3. 나이대[10단위]\n");
 	printf("4. 지역\n");
 	printf("5. 확진일\n");
 	printf("6. 격리시설\n");
@@ -82,14 +82,14 @@ void searchByAge(Corona* c[], int count)
 	int scount = 0;
 	int search;
 
-	printf("검색할 나이? ");
+	printf("검색할 나이대[10단위]? ");
 	scanf("%d", &search);
 
 	for(int i = 0; i < count; i++){
 
 		if(c[i] != NULL)
 		{
-			if(c[i]->age == search)
+			if(c[i]->age >= search || c[i]->age < search+10)
 			{
 				scount++;
 				if(scount == 1) 
