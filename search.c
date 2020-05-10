@@ -7,16 +7,17 @@ int selectSearchMenu()
 	int command;
 
 	printf("\n*** 검색 항목***\n");
-	printf("1. 이름으로 검색\n");
-	printf("2. 성별로 검색\n");
-	printf("3. 나이로 검색\n");
-	printf("4. 지역으로 검색\n");
-	printf("5. 확진일로 검색\n");
-	printf("6. 격리시설로 검색\n");
-	printf("7. 국내감염여부로 검색\n");
+	printf("1. 이름\n");
+	printf("2. 성별\n");
+	printf("3. 나이\n");
+	printf("4. 지역\n");
+	printf("5. 확진일\n");
+	printf("6. 격리시설\n");
+	printf("7. 국내감염여부\n");
 	printf("0. 검색 취소\n\n");
 	printf("=> 검색할 항목은? ");
 	scanf(" %d", &command);
+	getchar();
 
 	return command;
 }
