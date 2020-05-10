@@ -83,7 +83,7 @@ void searchByAge(Corona* c[], int count)
 	int search;
 
 	printf("검색할 나이대[10단위]? ");
-	scanf("%d", &search);
+	scanf(" %d", &search);
 
 	for(int i = 0; i < count; i++){
 
@@ -109,7 +109,29 @@ void searchByAge(Corona* c[], int count)
 
 // 지역으로 검색
 void searchByResidence(Corona* c[], int count){
+	int scount = 0;
+	char search[20];
 
+	printf("검색할 지역? ");
+	scanf(" %s", search);
+
+	for(int i = 0; i < count; i++){
+		if(c[i] != NULL){
+			if(strstr(c[i]->residence, search)){
+				scount++;
+				if(scount == 1)
+					listContents();
+
+				printf("%2d ", i + 1);
+				readCorona(*c[i]);
+			}
+		}
+	}
+
+	if(scount == 0)
+		printf("\n=> 검색된 정보가 없습니다!\n");
+
+	printf("\n");
 }
 
 // 확진일로 검색
