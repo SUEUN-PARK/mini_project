@@ -7,16 +7,17 @@ int selectSearchMenu()
 	int command;
 
 	printf("\n*** 검색 항목***\n");
-	printf("1. 이름으로 검색\n");
-	printf("2. 성별로 검색\n");
-	printf("3. 나이로 검색\n");
-	printf("4. 지역으로 검색\n");
-	printf("5. 확진일로 검색\n");
-	printf("6. 격리시설로 검색\n");
-	printf("7. 국내감염여부로 검색\n");
+	printf("1. 이름\n");
+	printf("2. 성별\n");
+	printf("3. 나이대[10단위]\n");
+	printf("4. 지역\n");
+	printf("5. 확진일\n");
+	printf("6. 격리시설\n");
+	printf("7. 국내감염여부\n");
 	printf("0. 검색 취소\n\n");
 	printf("=> 검색할 항목은? ");
 	scanf(" %d", &command);
+	getchar();
 
 	return command;
 }
@@ -27,7 +28,7 @@ void searchByName(Corona* c[], int count){
 	char search[20];
 	
 	printf("검색할 이름? ");
-	scanf(" %[^\n]s", search);
+	scanf(" %s", search);
 
 	for(int i = 0; i < count; i++){
 
@@ -76,8 +77,34 @@ void searchByGender(Corona* c[], int count){
 }
 
 // 나이로 검색
-void searchByAge(Corona* c[], int count){
+void searchByAge(Corona* c[], int count)
+{
+	int scount = 0;
+	int search;
 
+	printf("검색할 나이대[10단위]? ");
+	scanf("%d", &search);
+
+	for(int i = 0; i < count; i++){
+
+		if(c[i] != NULL)
+		{
+			if(c[i]->age >= search || c[i]->age < search+10)
+			{
+				scount++;
+				if(scount == 1) 
+					listContents();
+
+				printf("%2d ", i + 1);
+				readCorona(*c[i]);
+			}
+		}
+	}
+
+	if(scount == 0)
+		printf("\n=> 검색된 정보가 없습니다!\n");
+
+	printf("\n");
 }
 
 // 지역으로 검색
