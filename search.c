@@ -166,8 +166,31 @@ void searchByDate(Corona* c[], int count)
 }
 
 // 격리시설로 검색
-void searchByHospital(Corona* c[], int count){
+void searchByHospital(Corona* c[], int count)
+{
+	int scount = 0;
+	char search[20];
 
+	printf("검색할 격리시설? ");
+	scanf("%s", search);
+
+	for(int i = 0; i < count; i++){
+		if(c[i] != NULL){
+			if(strstr(c[i]->hospital, search)){
+				scount++;
+				if(scount == 1)
+					listContents();
+
+				printf("%2d ", i + 1); 
+				readCorona(*c[i]);
+			}
+		}
+	}
+
+	if(scount == 0)
+		printf("\n=> 검색된 정보가 없습니다!\n");
+
+	printf("\n");
 }
 
 // 국내감염여부로 검색
