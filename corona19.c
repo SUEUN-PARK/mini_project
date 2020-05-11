@@ -80,45 +80,8 @@ int main(void){
 			saveData(c, curcount);
                 }
 
-                else if(menu == 6){
-			int choice;
-			do{
-				no = selectSearchMenu();
-                        	switch(no)
-                        	{
-                        	case 0:
-                                	printf("검색 취소!\n");
-                                	break;
-                       	 	case 1: 
-                                	searchByName(c, curcount);
-                                	break;
-                        	case 2: 
-                        	        searchByGender(c, curcount);
-                        	        break;
-                        	case 3: 
-                               	 	searchByAge(c, curcount);
-                                	break;
-                        	case 4: 
-                                	searchByResidence(c, curcount);
-                                	break;
-                        	case 5: 
-                                	searchByDate(c, curcount);
-                                	break;
-                        	case 6: 
-                                	searchByHospital(c, curcount);
-                               	 	break;
-                        	case 7: 
-                        	        searchByDomestic(c, curcount);
-                        	        break;
-                        	default:
-                        	        printf("Error : 잘못된 입력!\n");
-                        	        break;
-                        	}
-				
-				printf("추가 검색 하시겠습니까(Yes:1 | No:0)? ");
-				scanf(" %d", &choice);
-
-			}while(choice == 1);
+                else if(menu == 6){	
+			searchCorona(c, curcount);
                 }
         }
 

@@ -6,7 +6,8 @@ int selectMenu(){
 
         int menu;
 
-        printf("\n*** Corona-19 ***\n");
+        printf("\n*** Corona-19 ***\n\n");
+
         printf("1. 확진자조회\n");
         printf("2. 확진자추가\n");
         printf("3. 확진자수정\n");
@@ -24,12 +25,12 @@ int selectMenu(){
 
 // 코로나 확진자 명단 조회(다중 데이터) (readCorona 활용)
 void listCorona(Corona* c[], int count){
-	printf("\nNo 지역  이름 성별 나이\t  확진일   격리시설 감염경로(국내:Y)\n");
+	printf("\nNo  지역  이름 성별 나이\t  확진일   격리시설 감염경로(국내:Y)\n");
 	printf("==============================================================\n");
 
 	for(int i = 0; i < count; i++){
 		if(c[i] != NULL){
-			printf("%2d ", i+1);
+			printf("%2d  ", i+1);
 			readCorona(*c[i]);
 		}
 	}
@@ -54,7 +55,8 @@ int selectUpdate()
 {
         int choice;
 
-        printf("\n***수정 선택***\n");
+        printf("\n*** 수정 선택***\n\n");
+
         printf("1. 이름\n");
         printf("2. 나이\n");
         printf("3. 성별\n");
@@ -66,7 +68,7 @@ int selectUpdate()
 	printf("0. 수정취소\n\n");
 
         printf("=> 수정할 항목은? ");
-        scanf("%d", &choice);
+        scanf(" %d", &choice);
 
         return choice;
 }

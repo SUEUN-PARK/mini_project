@@ -197,3 +197,45 @@ void searchByHospital(Corona* c[], int count)
 void searchByDomestic(Corona* c[], int count){
 
 }
+
+void searchCorona(Corona* c[], int count){
+	int choice;
+
+	do{
+		int no = selectSearchMenu();
+                switch(no)
+                {
+                	case 0:
+                               	printf("검색 취소!\n");
+                               	break;
+                        case 1: 
+                               	searchByName(c, count);
+                               	break;
+                        case 2: 
+                                searchByGender(c, count);
+                                break;
+                        case 3: 
+                            	searchByAge(c, count);
+                               	break;
+                        case 4: 
+                               	searchByResidence(c, count);
+                               	break;
+                        case 5: 
+                               	searchByDate(c, count);
+                               	break;
+                        case 6: 
+                               	searchByHospital(c, count);
+                              	break;
+                        case 7: 
+                                searchByDomestic(c, count);
+                                break;
+                        default:
+                                printf("Error : 잘못된 입력!\n");
+                                break;
+                }
+				
+		printf("추가 검색 하시겠습니까(Yes:1 | No:0)? ");
+		scanf(" %d", &choice);
+
+	} while(choice == 1);
+}

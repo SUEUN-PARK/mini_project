@@ -84,3 +84,6 @@ void searchByHospital(Corona* c[], int count);
 
 // 국내감염여부로 검색
 void searchByDomestic(Corona* c[], int count);
+
+// 검색함수
+void searchCorona(Corona* c[], int count);
