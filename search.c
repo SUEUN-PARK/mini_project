@@ -194,8 +194,31 @@ void searchByHospital(Corona* c[], int count)
 }
 
 // 국내감염여부로 검색
-void searchByDomestic(Corona* c[], int count){
+void searchByDomestic(Corona* c[], int count)
+{
+	int scount = 0;
+	char search;
 
+	printf("검색할 국내감염여부? (Y/N)? ");
+	scanf(" %c", &search);
+
+	for(int i = 0; i < count; i++){
+
+		if(c[i] != NULL){
+			if(c[i]->domestic == search){
+				scount++;
+				if(scount == 1) listContents();
+
+				printf("%2d ", i + 1);
+				readCorona(*c[i]);
+			}
+		}
+	}
+
+	if(scount == 0)
+		printf("\n=> 검색된 정보가 없습니다!\n");
+
+	printf("\n");
 }
 
 void searchCorona(Corona* c[], int count){
@@ -205,7 +228,7 @@ void searchCorona(Corona* c[], int count){
 		int no = selectSearchMenu();
                 switch(no)
                 {
-                	case 0:
+                		case 0:
                                	printf("검색 취소!\n");
                                	break;
                         case 1: 
