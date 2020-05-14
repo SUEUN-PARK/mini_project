@@ -228,7 +228,7 @@ void searchCorona(Corona* c[], int count){
 		int no = selectSearchMenu();
                 switch(no)
                 {
-                		case 0:
+                	case 0:
                                	printf("검색 취소!\n");
                                	break;
                         case 1: 
@@ -256,7 +256,9 @@ void searchCorona(Corona* c[], int count){
                                 printf("Error : 잘못된 입력!\n");
                                 break;
                 }
-				
+		
+		if(no == 0) break;
+	
 		printf("추가 검색 하시겠습니까(Yes:1 | No:0)? ");
 		scanf(" %d", &choice);
 
