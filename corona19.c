@@ -44,27 +44,20 @@ int main(void){
 			}
                         else{
 			        do{
-					choice = updateCorona(c[no-1]);
-
-					if(choice == 0) break; 
-                                        do
-                                        {
-					        printf("\n%d번 내역을 추가수정하시겠습니까?\n수정(1) | 종료(0): ", no);
+					updateCorona(c[no-1]);
+					do{
+						printf("\n%d번 내역을 추가수정하시겠습니까?\n수정(1) | 종료(0): ", no);
 					        scanf(" %d", &more);
-
-                                                if(!(more == 1 || more == 0))
-                                                {
+						if(!(more == 1 || more == 0)){
                                                         printf("Error: 잘못된 입력!\n");
                                                         continue;
                                                 }
-                                        }while(more !=0 );
-
-                                        if(more == 0)
-                                                break;
-
-				}while(choice != 8);
-				
-                	}
+						else{
+							 break;
+						}
+					}while(1);	
+                		}while(more == 1);
+			}
 		}
 
                 else if(menu == 4){

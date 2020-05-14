@@ -25,7 +25,7 @@ int selectMenu(){
 
 // 코로나 확진자 명단 조회(다중 데이터) (readCorona 활용)
 void listCorona(Corona* c[], int count){
-	printf("\nNo  지역  이름 성별 나이\t  확진일   격리시설 감염경로(국내:Y)\n");
+	printf("\nNo  지역  이름 성별 나이  확진일   격리시설 감염경로(국내:Y)\n");
 	printf("==============================================================\n");
 
 	for(int i = 0; i < count; i++){
@@ -76,7 +76,7 @@ int selectUpdate()
 // 코로나 확진자 명단의 목차를 보여주는 함수
 void listContents()
 {
-        printf("\nNo 지역  이름 성별 나이\t  확진일   격리시설 감염경로(국내:Y)\n");
+        printf("\nNo 지역  이름 성별 나이  확진일   격리시설 감염경로(국내:Y)\n");
 	printf("==============================================================\n");
 
 }

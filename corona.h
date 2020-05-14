@@ -45,7 +45,7 @@ int selectIndex(Corona* c[], int count);
 int selectUpdate();
 
 // 코로나 확진자 명단 수정 (selectIndex 활용)
-int updateCorona(Corona* c);
+void updateCorona(Corona* c);
 
 // 코로나 확진자 명단 삭제 (selectIndex 활용)
 // 삭제 방식은 해당 memory를 free() 후 NULL
