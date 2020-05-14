@@ -89,7 +89,7 @@ void searchByAge(Corona* c[], int count)
 
 		if(c[i] != NULL)
 		{
-			if(c[i]->age >= search || c[i]->age < search+10)
+			if(c[i]->age >= search && c[i]->age < search+10)
 			{
 				scount++;
 				if(scount == 1) 
